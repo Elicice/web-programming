@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="nb">
+    <meta name="description" content="semesteroppgave INFO134">
+    <meta name="author" content="Kandidatnr.: 139">
+    <meta name="keywords" content="Bergen, semesteroppgave">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Semesteroppgave INFO134, Arbeidskraft</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/arbeidskraftScript.js"></script>
+  </head>
+  <body onload="loadArbeidskraft()">
+    <main class="sitewrapper"> <!--klasse for å style hovedinnhold på siden -->
+      <nav>
+        <ul class="menu"> <!--meny -->
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="toaletterIBergen.html">Toaletter</a></li>
+          <li><a href="lekeplasserIBergen.html">Lekeplasser</a></li>
+          <li><a href="favorittLekeplass.html">Favorittlekeplass</a></li>
+          <li><a href="arbeidskraft.html" aria-label="current page">Arbeidskraft</a></li>
+         </ul>
+       </nav>
+       <header><!--Header bilde -->
+         <img src="media/dummyHeader.png" alt="Header. illustrasjon.">
+         <h2>Bergen, en semesteroppgave</h2>
+       </header>
+       <section>
+         <p><b>NAVs bedriftsundersøkelse - etterspørsel etter arbeidskraft.</b> <br><br>NAVs bedriftsundersøkelse ser på hvilke forventninger bedriftene har i forhold til sysselsettingsutviklingen det kommende året,
+           om bedriftene har mislyktes i å rekruttere arbeidskraft de siste tre månedene og om dette skyldes for få kvalifiserte søkere på stillingene.
+           På bakgrunn av disse svarene estimeres mangel på arbeidskraft for landet som helhet, for ulike regioner, samt enkeltnæringer og for ulike yrker.</p>
+         <form id="sortTabell">
+           <h3>Stortering</h3>
+           <button type="button" value="Sort" id="button_sort_alpha" onclick="sortTableAlpha()">Sorter alfabetisk</button>
+           <p><i>Trykk på kolonnene for å sortere økende, synkende og etter kolonne</i></p>
+         </form>
+         <article class="dataTablePrepper">
+           <table>
+            <thead>
+              <tr>
+                <th onclick="setSort(this, 'yrke');" class="no-sort">Yrke</th>
+                <th onclick="setSort(this, 'norge');" class="no-sort">Norge</th>
+                <th onclick="setSort(this, 'ostfold');" class="no-sort">Østfold</th>
+                <th onclick="setSort(this, 'akershus');" class="no-sort">Akershus</th>
+                <th onclick="setSort(this, 'oslo');" class="no-sort">Oslo</th>
+                <th onclick="setSort(this, 'hedmark');" class="no-sort">Hedmark</th>
+                <th onclick="setSort(this, 'oppland');" class="no-sort">Oppland</th>
+                <th onclick="setSort(this, 'buskerud');" class="no-sort">Buskerud</th>
+                <th onclick="setSort(this, 'vestfold');" class="no-sort">Vestfold</th>
+                <th onclick="setSort(this, 'telemark');" class="no-sort">Telemark</th>
+                <th onclick="setSort(this, 'aust_agder');" class="no-sort">Aust-Agder</th>
+                <th onclick="setSort(this, 'vest_agder');" class="no-sort">Vest-Agder</th>
+                <th onclick="setSort(this, 'rogaland');" class="no-sort">Rogaland</th>
+                <th onclick="setSort(this, 'hordaland');" class="no-sort">Hordaland</th>
+                <th onclick="setSort(this, 'sogn_fjordane');" class="no-sort">Sogn Og Fjordane</th>
+                <th onclick="setSort(this, 'more_og_romsdal');" class="no-sort">Møre og Romsdal</th>
+                <th onclick="setSort(this, 'trondelag');" class="no-sort">Trøndelag</th>
+                <th onclick="setSort(this, 'nordland');" class="no-sort">Nordland</th>
+                <th onclick="setSort(this, 'troms');" class="no-sort">Troms</th>
+                <th onclick="setSort(this, 'finnmark');" class="no-sort">Finnmark</th>
+              </tr>
+            </thead>
+            <tbody id="tabellArbeidskraft">
+            </tbody>
+           </table>
+         </article>
+       </sections>
+     </main>
+     <footer>
+        Semesteroppgave INFO134 vår 2018, Kandidatnr.: 139
+      </footer>
+    </body>
+</html>

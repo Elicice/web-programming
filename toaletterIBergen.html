@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="nb">
+    <meta name="description" content="semesteroppgave INFO134">
+    <meta name="author" content="Kandidatnr.: 139">
+    <meta name="keywords" content="Bergen, semesteroppgave">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Semesteroppgave INFO134, toaletter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script>
+      window.dataUrl = "https://hotell.difi.no/api/json/bergen/dokart";
+      window.page = "toalett";
+    </script>
+  </head>
+  <body>
+    <main class="sitewrapper">
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="toaletterIBergen.html" aria-label="current page">Toaletter</a></li>
+          <li><a href="lekeplasserIBergen.html">Lekeplasser</a></li>
+          <li><a href="favorittLekeplass.html">Favorittlekeplass</a></li>
+          <li><a href="arbeidskraft.html">Arbeidskraft</a></li>
+        </ul>
+      </nav>
+      <header>
+        <img src="media/dummyHeader.png" alt="Header. illustrasjon.">
+        <h2>Toaletter i Bergen</h2>
+      </header>
+      <section>
+        <p> Oversikt over toaletter i Bergen</p>
+        <div id="map"></div>
+        <article>
+          <p> Tabellen viser oversikt over toaletter i Bergen. Ved søk vil listen bli oppdatert.</p>
+          <table id="tabell">
+            <tr>
+            </tr>
+          </table>
+        </article>
+      </section>
+      <section class="skjema">
+        <form id="hustigsok">
+          <h2>Hurtigsøk</h2>
+          <input type="text" name="fritekst" value="" id="hurtigsok"></input>
+          <button type="button" value="Søk" onclick="readSearchHurtig()" id="button_hurtig">Søk</button>
+          <button type="button" valu="Hjelp" onclick="helpSearch()">Hjelp</button>
+          <p id="hjelp" style="display:none"> Slik bruker du hurtigsøk:<br><br>
+            1. Skrive adresse eller sted<br>
+            2. Skriv <i>mann</i> eller <i>dame</i> for å spesifisere kjønn<br>
+            3. Skriv <i>rullestol</i> eller <i>stellebord</i><br>
+            4. Skriv <i>gratis</i> for å få oversikt over gratis toalett<br>
+            5. Skriv <i>åpen</i> for å søke etter toaletter som er åpen nå<br>
+            6. Skriv <i>åpen:00:00</i> bytt ut 0-tallene med tidspunkt du vil søke på<br>
+            7. Skriv <i>pris:00</i> bytt ut 0 med tall 0-20 for å spespfisere makspris<br><br>
+            spesifiser med så mange søkekriterier som ønskelig, skill med mellomrom og avslutt med "søk"-knappen.<br>
+          </p>
+        </form>
+        <form id="avansertsok">
+          <h2>Avansert søk</h2>
+          <h3>Sted</h3>
+          <input type="text" name="fritekst" value="" id="avansertsok_fritekst"></input>
+          <h3>Kjønn</h3>
+          <input type="radio" name="gender" value="dame" id="radio_dame">Dame</input>
+          <input type="radio" name="gender" value="mann" id="radio_mann">Mann</input>
+          <input type="radio" name="gender" value="annet" checked id="radio_annet">Alle</input>
+
+          <h3>Tilgjengelighet</h3>
+          <input type="checkbox" name="rullestol" value"rullestol" id="rullestol">Rullestol</input>
+          <input type="checkbox" name="stellerom" value"stellerom" id="stellerom">Stellerom</input>
+
+          <h3>Åpningstid</h3>
+          <input type="checkbox" name="openNow" value"openNow" id="open_now">Åpen nå</input>
+          <br><br>
+          Velg tidspunkt:
+          <br>
+          <input type="time" name="open" value="" id="open_time">
+
+          <h3>Pris</h3>
+          <input type="checkbox" name="prisGratis" value"gratis" id="pris_gratis">Gratis</input>
+          <br><br>
+          Makspris(0-20kr):
+          <br>
+          <input type="number" name="makspris" min="0" max="20" id="pris_maks"> Kroner</input>
+          <br><br>
+
+          <button type="button" value="Søk" id="button_avansert" onclick="readSearchAvansert()">Søk</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      Semesteroppgave INFO134 vår 2018, Kandidatnr.: 139
+    </footer>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD2aKFaRRzWWxP1j4896nQCYeB_EEirW8&callback=initApp">
+    </script>
+  </body>
+</html>

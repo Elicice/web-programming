@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="nb">
+    <meta name="description" content="semesteroppgave INFO134">
+    <meta name="author" content="Kandidatnr.: 139">
+    <meta name="keywords" content="Bergen, semesteroppgave">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Semesteroppgave INFO134, favoritt</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/scriptFavoritt.js"></script>
+  </head>
+  <body>
+    <main class="sitewrapper"> <!--klasse for å style hovedinnhold på siden -->
+      <nav>
+        <ul class="menu"> <!--meny -->
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="toaletterIBergen.html">Toaletter</a></li>
+          <li><a href="lekeplasserIBergen.html">Lekeplasser</a></li>
+          <li><a href="favorittLekeplass.html" aria-label="current page">Favorittlekeplass</a></li>
+          <li><a href="arbeidskraft.html">Arbeidskraft</a></li>
+         </ul>
+       </nav>
+       <header><!--Header bilde -->
+         <img src="media/dummyHeader.png" alt="Header. illustrasjon.">
+         <h2>Bergen, en semesteroppgave</h2>
+       </header>
+       <section>
+         <p>Velg din favorittlekeplass og lekeplassen og nærmeste toalett vil komme opp på kartet og i tabell under</p>
+         <div id="map"></div>
+       </section>
+       <section>
+         <article>
+           <p>velg din favoritt-lekeplass i listen under: </p>
+          <select id="favoritt" onchange="sortFavoritt(this.value)">
+          </select>
+        </article>
+       </sections>
+       <section>
+         <article>
+           <p> Din favorittlekeplass og nærmeste toalett:</p>
+           <table id="tabell">
+             <tr>
+             </tr>
+           </table>
+        </article>
+       </sections>
+      </main>
+      <footer>
+        Semesteroppgave INFO134 vår 2018, Kandidatnr.: 139
+      </footer>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD2aKFaRRzWWxP1j4896nQCYeB_EEirW8&callback=initApp"> </script>
+    </body>
+  </html>
